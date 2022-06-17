@@ -32,10 +32,10 @@ pink.addEventListener("dblclick", function() {
     pink.style.background= "green"
     });
 
-pink.addEventListener("mousewheel", function() {
+pink.addEventListener("wheel", function() {
     pink.style.background= "orange"
     });
-    
+
 
 document.addEventListener("keydown", colorChange);
 
@@ -55,4 +55,5 @@ document.addEventListener("keydown", colorChange);
     else if (e.keyCode === 79) {
         pink.style.background= "orange"
     }
+   
 }
