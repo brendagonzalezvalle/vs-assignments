@@ -3,12 +3,12 @@ var submit = document.getElementByID(submit);
 var query = document.querySelector;
 
 function formAlert() {
-    var firstName = form.elements["firstName"].value;
-    var lastName = form.elements["lastName"].value;
-    var age = form.elements["age"].value;
-    var gender = form.elements["gender"].value;
-    var location = form.elements["travel-location"].value;
-    var diet = {};
+    let firstName = form.elements["firstName"].value;
+    let lastName = form.elements["lastName"].value;
+    let age = form.elements["age"].value;
+    let gender = form.elements["gender"].value;
+    let location = form.elements["travel-location"].value;
+    let diet = [];
     if (form.elements['vegan'].checked) {
         diet.push(document.getElementById("vegan").value);
     }
