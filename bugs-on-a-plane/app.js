@@ -1,7 +1,7 @@
-var form = document.getElementByID("arline-form");
-var submit = document.getElementByID(submit);
-var query = document.querySelector;
-
+var form = document["airlineForm"]
+var submit = document.querySelector("#submit");
+// var query = document.querySelector;
+console.log(form)
 function formAlert() {
     let firstName = form.elements["firstName"].value;
     let lastName = form.elements["lastName"].value;
@@ -24,4 +24,7 @@ function formAlert() {
 }
 
 
-submit.addEventListener("click", formAlert);
+form.addEventListener("submit", function(e){
+    e.preventDefault()
+    formAlert()
+})
