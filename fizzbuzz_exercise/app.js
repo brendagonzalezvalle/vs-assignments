@@ -12,18 +12,19 @@
 
 // 12fizz4buzzfizz78fizzbuzz11fizz1314fizzbuzz16ect. -->
 
-const numbers = []
 
-for (let i = 0; i <= 100; i++) {
-    console.log(i)
-    if(i % 3 === 0){
+
+for (let i = 1; i <= 100; i++) {
+    if(i % 15 == 0){
+        console.log("FizzBuzz")
+    } else if (i % 3 == 0){
         console.log("Fizz")
-    }
-    if (i === 5){
+    } else if ( i % 5 == 0){
         console.log("Buzz")
-    }
-    if (i === 3 && i === 5){
-        console.log(FizzBuzz)
-    }
+
+    } else 
+    (console.log(i))
+
+   
 
 }
