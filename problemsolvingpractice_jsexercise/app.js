@@ -2,18 +2,18 @@
 // largest([3, 5, 2, 8, 1]) // => 8
 
 
-
-function largest (arrayNumbers){
-    for (var i = 0; i<= largest.length; i++){
-        if ([i]>largest) {
-            var largest=array[i];
-        }   
+function largestValue(numbers) {
+    var largest = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        var elements = numbers[i];
+        if (elements > largest) {
+            largest = elements;
+        }
     }
-
+    return largest;
 }
-
-
-console.log(largest([3, 5, 2, 8, 1]))
+const numbers = [3, 5, 2, 8, 1];
+console.log(largestValue(numbers));
 
 // 2. Write a function that takes an array of words and a character and returns each word that has that character present.
 // lettersWithStrings(["#3", "$$$", "C%4!", "Hey!"], "!") 
