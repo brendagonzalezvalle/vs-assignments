@@ -12,6 +12,6 @@ function largestValue(numbers) {
     }
     return largest;
 }
-const numbers = [3, 5, 2, 8, 1];
-console.log(largestValue(numbers));
+
+console.log(largestValue([3, 5, 2, 8, 1]));
 
