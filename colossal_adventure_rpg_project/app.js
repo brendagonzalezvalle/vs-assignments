@@ -10,25 +10,32 @@ const userName = readlineSync.question("What is your name? ")
 
 console.log("Great thank you " + userName + "!")
 
-const userChoice = readlineSync.keyIn("Would you like to attack or run? Type (a) to attack or type (r) to run") 
+// const userChoice = readlineSync.keyIn("Would you like to attack or run? Type (a) to attack or type (r) to run") 
 
 
 // let randomNumber = Math.floor(Math.random()*10)
 // let userWalk = readlineSync.keyIn("Enter a (w) to walk through the tunnel?")
 // let enemy = 0
 
-const catEnemy = function (){
-   return console.log("There is a cat coming to attack" + userChoice)
-}
+// const catEnemy = function (){
+//    return ("There is a cat coming to attack" + userChoice)
+// }
+
 
 function walk(){
     let randomNumber = Math.random();
     console.log(randomNumber)
     console.log("Moving");
+    let userChoice = readlineSync.keyIn("Would you like to attack or run? Type (a) to attack or type (r) to run") 
     
-    while (randomNumber < 5){
-        catEnemy();
-      console.log("It's working")              
+    while (randomNumber < 0.25){
+        console.log("It's working") 
+        if (randomNumber < .025 || randomNumber > .400 ){
+            let userChoice
+        }
+        else if (randomNumber ){
+            console.log("We got past it")
+        }        
         break;
     }
 }
