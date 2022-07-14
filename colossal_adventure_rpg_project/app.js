@@ -3,7 +3,28 @@
 
 let defeated = false
 let hp = 100
-enemies = [ ]
+let enemies = [ 
+    {
+        name: "Enemy 1",
+        hp: "30",
+        attack: "10"
+
+
+    },
+    {
+        name: "Enemy 2",
+        hp: "50",
+        attack: "20",
+
+    },
+    {
+        name: "Enemy 3",
+        hp: "20",
+        attack: "80"
+    },
+
+
+]
 
 
 
@@ -34,19 +55,41 @@ while(hp > 0){
 
 // }
 
+// *****Creating functions*******
+ 
+
 function walk(){
     const walking =readlineSync.keyIn("To start walking press(w)?")
-    let chance = Math.floor((Math.random()*2)+1);
+    let chance = Math.floor((Math.random()*3)+1);
     console.log(chance)
 
         if(chance === 1){
-            console.log("1")
-        } else console.log("2")
+            console.log(enemies[0])
+        } else if (chance === 2){
+            console.log("2")
         } 
+        else console.log("3")
         readlineSync.keyInPause("Oh no get ready to begin fighting ")
-    let willFight = readlineSync.keyIn("(f) for fighting, (i) for checking inventory")
+        let willFight = readlineSync.keyIn("(f) for fighting, (i) for checking inventory")
+        
+        
+    } 
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // console.log("Moving");
     // let userChoice = readlineSync.keyIn("Would you like to attack or run? Type (a) to attack or type (r) to run") 
     
