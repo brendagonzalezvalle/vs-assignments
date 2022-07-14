@@ -55,25 +55,33 @@ while(hp > 0){
 
 // }
 
-// *****Creating functions*******
+// *****Creating functions********************************************
  
 
 function walk(){
-    const walking =readlineSync.keyIn("To start walking press(w)?")
+    let walking =readlineSync.keyIn("To start walking press(w)?")
     let chance = Math.floor((Math.random()*3)+1);
     console.log(chance)
 
         if(chance === 1){
+            let attackOrRun =readlineSync.keyIn("You have encounter with Enemy 1. Would you like to attack (a) or run (r)?")
             console.log(enemies[0])
+
+
         } else if (chance === 2){
-            console.log("2")
-        } 
-        else console.log("3")
-        readlineSync.keyInPause("Oh no get ready to begin fighting ")
-        let willFight = readlineSync.keyIn("(f) for fighting, (i) for checking inventory")
+            console.log(enemies[1])
+        } else if (chance === 3){
+            console.log(enemies[2])
+        } else console.log("game ends")   
+  
+        // let willFight = readlineSync.keyIn("(f) for fighting, (i) for checking inventory")
         
         
     } 
+function fight(){
+    readlineSync.keyInPause("The enemy is fighting")
+
+}    
     
     
 
