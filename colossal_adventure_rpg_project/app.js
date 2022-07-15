@@ -47,17 +47,6 @@ while (true) {
     walk()
 }
 
-// ********************************************************** walk calls
-// fight , then fight calls enemy encouter, enemy encounter calls , enemy attack
-// function safe(){
-//    readline.keyInPause("You are safe great job")
-// }
-// safe()
-
-// function fight(){
-
-// }
-
 // *****Creating functions********************************************
  
 
@@ -67,20 +56,8 @@ function randomNumber(min, max) {
 
 function walk(){
     let progress = 0
-    let key = readlineSync.keyIn("To start walking press(w)? If you would like to print your stats, press (p). ") // Hanging
+    let key = readlineSync.keyIn("To start walking press(w)! If you would like to print your stats, press (p). ") // Hanging
     console.clear()
-    if (key === 'w') {
-        let chance = randomNumber(1, 4)
-        if (chance === 1) {
-
-            if (attackOrRun !== 'r' || attackOrRun !== 'a') {
-                console.log('you must press either r or a')
-            }
-            if (attackOrRun === 'r') run()
-            else if (attackOrRun === 'a') attack()
-        }
-    }
-
     if (key === 'p') {
         console.log('Here are your stats: ')
         console.log(`Your health is ${player.hp}`)
@@ -93,44 +70,74 @@ function walk(){
                 console.log(item)
             })
         }
-    }     
-} 
+    }   
+    if (key === 'w') {
+        let chance = randomNumber(1, 4)
+        if (chance === 1) {
+            playersChoice =readlineSync.keyIn("You are being attacked would you like to run (r) or attack (a)?")
+            if(playersChoice === "a"){
+                attack()
+            } else if (playersChoice === "r" ){
+                run()
+                
+
+            } else if (playersChoice !== "a" || "r"){
+                console.log("You must press the key (a) or (r)")
+                walk()
+            }
+        } else if (chance === 3){
+            readlineSync.keyInPause("You are doing great keep going !! chance 3 is happening")
+        } else {
+            console.log("chance 2 is happening")
+        }
+
+    }
+}
+
+
 
 function run() {
     let escape = randomNumber(0, 2) // sleight of hand
-    if (escape) return walk() // recurse (return to the top of a function, basically)
-    else if (!escape) attack()
-    console.log(readlineSync.keyInPause("The enemy is running"))
-}    
+    if (escape === 0) return escape() // recurse (return to the top of a function, basically)
+    else if (escape !== 0) {
+        attack()
+        readlineSync.keyInPause("The enemy is running")
+}    }
+
+function escape(){
+    readlineSync.keyInPause("You have escaped!! Nice job you are a fast runner!")
+}
 
 function attack() {
     let index = randomNumber(0, 3)
     console.log(`You are being attacked by: ${enemies[index].name}`)
 
-    readlineSync.keyInPause("The player is attacking first") // blocking/hanging
+    readlineSync.keyInPause("You got ahead of the game and set a trap that hit the Enemy WAY TO GO!!") // blocking/hanging
 
     let enemyDamage = randomNumber(1, 51)
     enemies[index].hp -= enemyDamage
 
-    console.log(`the enemy health went down by ${enemyDamage}`)
+    readlineSync.keyInPause("")
+    console.log(`the enemies health went down by ${enemyDamage}`)
     
     if (enemies[index].hp > 1) {
-        console.log('but the enemy is still alive, so you did not win any loot!!')
+        readlineSync.keyInPause('but the enemy is still alive, so you did not win any rewards!!')
     }
 
     if (enemies[index].hp < 0) {
         player.inventory.push(enemies[index].loot)
     }
 
-    readlineSync.keyInPause("The enemy is attacking now") // blocking/hanging
+    // readlineSync.keyInPause("The enemy is attacking now") // blocking/hanging
 
 
     let playerDamage = randomNumber(1, 101)
-    console.log(`player health has gone down by ${playerDamage}`)
+    readlineSync.keyInPause(`Ouch the enemy has hit you back and your health points went down by  ${playerDamage}`)
     player.hp -= playerDamage
 
     if (player.hp > 0) {
-        console.log('You are still alive! Keep walking, soldier!')
+        readlineSync.keyInPause('You are still alive! Keep walking, you got this!')
+        walk()
     }
 
     if (player.hp < 0) endGame()
@@ -148,13 +155,5 @@ function winGame() {
     console.log('you won')
     process.exit(0)
 }
-
-
-
-
-
-
-
-
 
 
