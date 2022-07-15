@@ -85,10 +85,20 @@ function walk(){
                 console.log("You must press the key (a) or (r)")
                 walk()
             }
-        } else if (chance === 3){
-            readlineSync.keyInPause("You are doing great keep going !! chance 3 is happening")
+        } else if (chance === 2){
+            playersChoice =readlineSync.keyIn("You are being attacked would you like to run (r) or attack (a)?")
+            if(playersChoice === "a"){
+                attack()
+            } else if (playersChoice === "r" ){
+                run()
+                
+
+            } else if (playersChoice !== "a" || "r"){
+                console.log("You must press the key (a) or (r)")
+                walk()
+            }
         } else {
-            console.log("chance 2 is happening")
+            console.log("You are doing great keep going !! chance 3 is happening")
         }
 
     }
@@ -98,13 +108,13 @@ function walk(){
 
 function run() {
     let escape = randomNumber(0, 2) // sleight of hand
-    if (escape === 0) return escape() // recurse (return to the top of a function, basically)
+    if (escape === 0) return playerEscapes() // recurse (return to the top of a function, basically)
     else if (escape !== 0) {
         attack()
         readlineSync.keyInPause("The enemy is running")
 }    }
 
-function escape(){
+function playerEscapes(){
     readlineSync.keyInPause("You have escaped!! Nice job you are a fast runner!")
 }
 
