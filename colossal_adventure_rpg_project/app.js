@@ -31,7 +31,7 @@ let enemies = [
 
 
 
-// Keep this line of code:  Intro/ stores name
+// Keep this line of code:  Intro/ stores name/ while loop
 
 const readlineSync = require("readline-sync")
 readlineSync.keyInPause("Hi Welcome! Let's play a game today!! Wohooo!")
@@ -50,13 +50,14 @@ while (true) {
 
 // *****Creating functions********************************************
  
-
+// Global function can use in code below to help with pulling a random number within a certain range i choose
 function randomNumber(min, max) { 
     return Math.floor(Math.random() * (max - min) + min)
 } 
 
+// ${} inserts variable in a string similar to using the  +: String Interpolation/Template literals
 function walk() {
-    let key = readlineSync.keyIn(`You have made it ${progress} miles!! To ${progress > 0 ? 'continue walking,' : 'walk,'} press(w)! If you would like to print your stats, press (p). `) // Hanging
+    let key = readlineSync.keyIn(`You have made it to ${progress} miles!! To ${progress > 0 ? 'continue walking,' : 'walk,'} press(w)! If you would like to print your stats, press (p). `) // Hanging
 
     if (key === 'p') {
         console.log('Here are your stats: ')
@@ -97,13 +98,16 @@ function walk() {
         progress += 1
     }
 }
-    if (!enemies.length) winGame()
+    if (!enemies.length) winGame()  
+    // if (enemies.length === 0) {
+    //     winGame()
+    // }
     if (player.hp < 0) endGame()
 }
 
 function run() {
-    let escape = randomNumber(0, 2) // sleight of hand
-    if (escape === 0) return playerEscapes() // recurse (return to the top of a function, basically)
+    let escape = randomNumber(0, 2) 
+    if (escape === 0) return playerEscapes() // recurse (return to the top of a function)
     else if (escape !== 0) {
         attack()
         readlineSync.keyInPause("The enemy is running")
@@ -117,14 +121,13 @@ function attack() {
     let index = randomNumber(0, enemies.length)
     console.log(`You are being attacked by: ${enemies[index].name}`)
 
-    readlineSync.keyInPause("You got ahead of the game and set a trap that hit the Enemy WAY TO GO!!") // blocking/hanging
+    readlineSync.keyInPause("You got ahead of the game and set a trap that hit the Enemy WAY TO GO!!") // pause
 
     let enemyDamage = randomNumber(1, 51)
     enemies[index].hp -= enemyDamage
 
-    console.log(`The enemies health went down by ${enemyDamage}`)
     console.log(`The enemy's health went down by ${enemyDamage}`)
-    console.log("The enemy's health went down by ${enemyDamage}")
+    
 
     if (enemies[index].hp > 1) {
         readlineSync.keyInPause('but the enemy is still alive, so you did not win any rewards!!')
