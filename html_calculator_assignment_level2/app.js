@@ -2,15 +2,16 @@
 
 // **Requirements:**
 
-// - You will have one section (`<div>`) for each math operation (so 3 sections) total
-// - Each section has two inputs to take the first and second numbers
-// - Each section will have a button to perform the operation
-// - You will inject the result into the HTML (not an alert)
-// - Your website will have 3 colors
+//done - You will have one section (`<div>`) for each math operation (so 3 sections) total 
+// done- Each section has two inputs to take the first and second numbers
+//done - Each section will have a button to perform the operation
+// done- You will inject the result into the HTML (not an alert)
+// done- Your website will have 3 colors
 // - Your website will have proper padding/spacing to lay things out nicely
 
 const form1 = document["adding-form"]
 const form2 = document["subtracting-form"]
+const form3 = document["multiplying-form"]
 
 
 // Form 1 adding
@@ -27,9 +28,9 @@ form1.addEventListener("submit", function(e){
     console.log(firstNumberAdding)
     console.log(secondNumberAdding)
     
-    const h1 = document.createElement("h1")
+    const header2 = document.createElement("h2")
     h1.textContent = firstNumberAdding + " " + secondNumberAdding
-    document.getElementById("section1").append(h1)
+    document.getElementById("section1").append(header2)
 
 
 })
@@ -53,5 +54,26 @@ form2.addEventListener("submit", function(e){
     document.getElementById("section2").append(h2)
 
 
+
+})
+
+// Form 3 multiplying
+
+form3.addEventListener("submit", function(e){
+    e.preventDefault()
+
+    const multiplyNumber1 = form3.mulNum1.value
+    const multiplyNumber2 = form3.mulNum2.value
+
+    form3.mulNum1.value = ""
+    form3.mulNum2.value = ""
+
+
+    console.log(multiplyNumber1)
+    console.log(multiplyNumber2)
+
+    const h2 = document.createElement("h2")
+    h2.textContent = multiplyNumber1 + " " + multiplyNumber2
+    document.getElementById("section3").append(h2)
 
 })
