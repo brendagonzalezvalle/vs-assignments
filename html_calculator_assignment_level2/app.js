@@ -10,8 +10,10 @@
 // - Your website will have proper padding/spacing to lay things out nicely
 
 const form1 = document["adding-form"]
+const form2 = document["subtracting-form"]
 
-// Form 1
+
+// Form 1 adding
 
 form1.addEventListener("submit", function(e){
     e.preventDefault()
@@ -19,8 +21,8 @@ form1.addEventListener("submit", function(e){
     const firstNumberAdding = form1.addNum1.value
     const secondNumberAdding = form1.addNum2.value
     
-    form1.addNum1.value = ""
-    form1.addNum2.value = ""
+    form1.addNum1.value = " "
+    form1.addNum2.value = " "
     
     console.log(firstNumberAdding)
     console.log(secondNumberAdding)
@@ -32,4 +34,24 @@ form1.addEventListener("submit", function(e){
 
 })
 
-// Form 2
+// Form 2 subtracting
+
+form2.addEventListener("submit", function(e){
+    e.preventDefault()
+
+    const firstNumberSubtracting = form2.subNum1.value
+    const secondNumberSubtracting = form2.subNum2.value
+
+    form2.subNum1.value = " "
+    form2.subNum2.value = " "
+
+    console.log(firstNumberSubtracting)
+    console.log(secondNumberSubtracting)
+
+    const h2 = document.createElement("h2")
+    h2.textContent = firstNumberSubtracting + " " + secondNumberSubtracting
+    document.getElementById("section2").append(h2)
+
+
+
+})
