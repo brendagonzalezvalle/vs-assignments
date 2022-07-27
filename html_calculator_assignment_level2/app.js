@@ -7,7 +7,7 @@
 //done - Each section will have a button to perform the operation
 // done- You will inject the result into the HTML (not an alert)
 // done- Your website will have 3 colors
-// - Your website will have proper padding/spacing to lay things out nicely
+// done- Your website will have proper padding/spacing to lay things out nicely
 
 const form1 = document["adding-form"]
 const form2 = document["subtracting-form"]
