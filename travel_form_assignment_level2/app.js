@@ -22,28 +22,27 @@ form.addEventListener("submit", (event) => {
     const firstName = form.nameField1.value 
     const lastName = form.nameField2.value
     const ageOfPerson = form.ageField.value
-    console.log(form.genderField.value)
+    const gender = form.genderField.value
+    const location = form.locations.value
     
     for(let i = 0; i < form.dietRestrictions.length; i++){
         if(form.dietRestrictions[i].checked)
         checkedInputs.push(form.dietRestrictions[i].value)
 
     }
-    console.log(checkedInputs)
+    (checkedInputs)
 
-    console.log(form.locations.value)
+    let formAlert = `
+        First Name: ${firstName}
+        Last Name: ${lastName}
+        Age: ${ageOfPerson}
+        Gender: ${gender}
+        Location: ${location}
+        Dietary Restrictions: ${checkedInputs}
+    `
+    alert(formAlert);
+    event.preventDefault()
 
-    alert(
-        "First Name: " + firstName +
-
-        " Last Name: " + lastName  +
-
-        " Age: " + ageOfPerson 
-    )
-
-
-
-    
 
 
 })
