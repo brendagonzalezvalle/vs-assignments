@@ -12,3 +12,38 @@
 // Each element of the form should be given a `name` attribute so you can access the data in JavaScript and do stuff with it.
 
 // There should also be a button at the end of the form to submit it. Upon pressing the button, an alert should pop up that looks like this:
+
+const form = document.flightForm
+const checkedInputs = []
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+    
+    const firstName = form.nameField1.value 
+    const lastName = form.nameField2.value
+    const ageOfPerson = form.ageField.value
+    console.log(form.genderField.value)
+    
+    for(let i = 0; i < form.dietRestrictions.length; i++){
+        if(form.dietRestrictions[i].checked)
+        checkedInputs.push(form.dietRestrictions[i].value)
+
+    }
+    console.log(checkedInputs)
+
+    console.log(form.locations.value)
+
+    alert(
+        "First Name: " + firstName +
+
+        " Last Name: " + lastName  +
+
+        " Age: " + ageOfPerson 
+    )
+
+
+
+    
+
+
+})
