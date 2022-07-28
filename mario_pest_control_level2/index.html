@@ -10,24 +10,37 @@
 
 <body>
 
-    <form>
+    <form name = "marioPestForm">
         
         <ol>
-        <li> Goombas Price: (5 coins)</li> <br>
-        <img class = "images" src = "https://upload.wikimedia.org/wikipedia/en/c/ce/Goomba.PNG"> <br>
-        Total: <input type = "number"> 
 
-        <li> Bob-ombs Price: (7 coins) </li> <br>
+            <li> Goombas Price: (5 coins)</li> <br>
+            <img class = "images" src = "https://upload.wikimedia.org/wikipedia/en/c/ce/Goomba.PNG"> <br>
+            Total Goombas Caught: <input type = "number" name = "goombaTotal"> 
 
-        <img class = "images"  src = "https://mario.wiki.gallery/images/4/47/PMCS_Sprite_-_Big_Bob-omb.png"> <br>
+            <li> Bob-ombs Price: (7 coins) </li> <br>
+            <img class = "images"  src = "https://mario.wiki.gallery/images/4/47/PMCS_Sprite_-_Big_Bob-omb.png"> <br>
 
-        Total: <input type = "number">
-        <li> Cheep-cheeps Price: (11 coins) </li> <br>
-        <img class = "images"  src="https://mario.wiki.gallery/images/thumb/6/63/CheepCheepNSMBU.png/1200px-CheepCheepNSMBU.png"> <br>
-        Total: <input type = "number">
+            Total Bob-ombs Caught: <input type = "number" name="bobombsTotal">
+
+            <li> Cheep-cheeps Price: (11 coins) </li> <br>
+            <img class = "images"  src="https://mario.wiki.gallery/images/thumb/6/63/CheepCheepNSMBU.png/1200px-CheepCheepNSMBU.png"> <br>
+            Total Cheep-cheeps Caught: <input type = "number" name ="cheepcheepsTotal">
+
         </ol>
 
+
+        <button> Submit </button>
+
+        <div id = "totalPrice">
+            Total Price: $
+
+        
+        </div>
+
     </form>
+
+    
 
 </body>
 
