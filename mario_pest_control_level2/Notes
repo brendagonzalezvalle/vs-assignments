@@ -5,7 +5,7 @@ The website must contain the following:
 X- A list displaying each baddie by type. Each list item must:
 X Have baddie image
 X- Have baddie name
-- Show price of that baddie
+X Show price of that baddie
 X- Have an input box to enter the total caught of that type
 - A total price at the bottom that adds sums the total cost of baddies caught
 - *(must use Javascript for this math - no hard coded values)*
